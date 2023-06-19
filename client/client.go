@@ -205,6 +205,8 @@ func (s *BriefResourceSetting) SetStreamingResourceSetting(v *StreamingResourceS
 
 type Deployment struct {
 	Artifact             *Artifact              `json:"artifact,omitempty" xml:"artifact,omitempty"`
+	Creator              *string                `json:"creator,omitempty" xml:"creator,omitempty"`
+	CreatorName          *string                `json:"creatorName,omitempty" xml:"creatorName,omitempty"`
 	DeploymentHasChanged *bool                  `json:"deploymentHasChanged,omitempty" xml:"deploymentHasChanged,omitempty"`
 	DeploymentId         *string                `json:"deploymentId,omitempty" xml:"deploymentId,omitempty"`
 	DeploymentTarget     *BriefDeploymentTarget `json:"deploymentTarget,omitempty" xml:"deploymentTarget,omitempty"`
@@ -228,6 +230,16 @@ func (s Deployment) GoString() string {
 
 func (s *Deployment) SetArtifact(v *Artifact) *Deployment {
 	s.Artifact = v
+	return s
+}
+
+func (s *Deployment) SetCreator(v string) *Deployment {
+	s.Creator = &v
+	return s
+}
+
+func (s *Deployment) SetCreatorName(v string) *Deployment {
+	s.CreatorName = &v
 	return s
 }
 
@@ -480,6 +492,8 @@ func (s *JarArtifact) SetMainArgs(v string) *JarArtifact {
 type Job struct {
 	Artifact                 *Artifact                  `json:"artifact,omitempty" xml:"artifact,omitempty"`
 	BatchResourceSetting     *BatchResourceSetting      `json:"batchResourceSetting,omitempty" xml:"batchResourceSetting,omitempty"`
+	Creator                  *string                    `json:"creator,omitempty" xml:"creator,omitempty"`
+	CreatorName              *string                    `json:"creatorName,omitempty" xml:"creatorName,omitempty"`
 	DeploymentId             *string                    `json:"deploymentId,omitempty" xml:"deploymentId,omitempty"`
 	DeploymentName           *string                    `json:"deploymentName,omitempty" xml:"deploymentName,omitempty"`
 	EndTime                  *int64                     `json:"endTime,omitempty" xml:"endTime,omitempty"`
@@ -512,6 +526,16 @@ func (s *Job) SetArtifact(v *Artifact) *Job {
 
 func (s *Job) SetBatchResourceSetting(v *BatchResourceSetting) *Job {
 	s.BatchResourceSetting = v
+	return s
+}
+
+func (s *Job) SetCreator(v string) *Job {
+	s.Creator = &v
+	return s
+}
+
+func (s *Job) SetCreatorName(v string) *Job {
+	s.CreatorName = &v
 	return s
 }
 
